@@ -1,3 +1,3 @@
 # Wredis
 
-a sample redis.
+a sample redis project.
