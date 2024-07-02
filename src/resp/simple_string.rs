@@ -1,8 +1,8 @@
-use std::ops::Deref;
 use bytes::BytesMut;
+use std::ops::Deref;
 
-use crate::{RespDecode, RespEncode, RespError};
 use super::{extract_simple_frame_data, CRLF_LEN};
+use crate::{RespDecode, RespEncode, RespError};
 
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd)]
 pub struct SimpleString(pub String);
@@ -86,5 +86,4 @@ mod tests {
         let frame: RespFrame = SimpleString::new("OK".to_string()).into();
         assert_eq!(frame.encode(), b"+OK\r\n");
     }
-
 }
